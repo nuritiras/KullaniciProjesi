@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "243491069111",
+    "project_id": "kullaniciprojesi-83567",
+    "storage_bucket": "kullaniciprojesi-83567.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243491069111:android:1721ea5717677187c00132",
+        "android_client_info": {
+          "package_name": "tr.gov.nuritiras.kullaniciprojesi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUQhzru9C325871IaBLmPSYA43UI7cvK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
