@@ -7,58 +7,117 @@
     android:layout_height="match_parent"
     tools:context=".DetaActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <EditText
+        android:id="@+id/editTextOgrenciNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="78dp"
-        android:text="E-Posta"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Öğrenci No Güncelle"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTamAd"
+        app:layout_constraintStart_toStartOf="@+id/editTextTamAd"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTamAd" />
+
+    <EditText
+        android:id="@+id/editTextParola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:hint="Parola Güncelle"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickDeleteAccount"
+        android:text="Hesabı Sil"
+        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+    <EditText
+        android:id="@+id/editTextTamAd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Ad Soyad Güncelle"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/editTextParola"
+        app:layout_constraintStart_toStartOf="@+id/editTextParola"
+        app:layout_constraintTop_toBottomOf="@+id/editTextParola" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClickSignOut"
+        android:text="Oturumu Kapat"
+        app:layout_constraintEnd_toEndOf="@+id/buttonGuncelle"
+        app:layout_constraintStart_toStartOf="@+id/buttonGuncelle"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGuncelle" />
+
+    <Button
+        android:id="@+id/buttonGuncelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="onClickUpdateAccount"
+        android:text="Bilgileri Güncelle"
+        app:layout_constraintEnd_toEndOf="@+id/editTextOgrenciNo"
+        app:layout_constraintStart_toStartOf="@+id/editTextOgrenciNo"
+        app:layout_constraintTop_toBottomOf="@+id/editTextOgrenciNo" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
         android:layout_marginTop="25dp"
         android:text="Parola"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="Ogrenci No"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:layout_marginEnd="1dp"
         android:text="Adı Soaydı"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="27dp"
-        android:text="Ogrenci No"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="45dp"
+        android:text="E-Posta"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="116dp"
-        android:onClick="onClickSignOut"
-        android:text="Oturumu Kapat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

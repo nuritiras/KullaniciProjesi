@@ -41,39 +41,45 @@ class KayitActivity : AppCompatActivity() {
         val parola=binding.editTextTextPassword.text.toString()
         val ad=binding.editTextText.text.toString()
         val no=binding.editTextNumber.text.toString()
+        if(eposta.isEmpty() || parola.isEmpty() || ad.isEmpty() || no.isEmpty()){
+            Toast.makeText(this,"Lütfen boşlukları doldurunuz",Toast.LENGTH_LONG).show()
+        }
+        else
+        {
+            auth.createUserWithEmailAndPassword(eposta, parola)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        val userId = auth.currentUser?.uid
+                        val user = hashMapOf(
+                            "eposta" to eposta,
+                            "parola" to parola,
+                            "tamad" to ad,
+                            "ogrenciNo" to no
+                        )
 
-        auth.createUserWithEmailAndPassword(eposta, parola)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val userId = auth.currentUser?.uid
-                    val user = hashMapOf(
-                        "eposta" to eposta,
-                        "parola" to parola,
-                        "tamad" to ad,
-                        "ogrenciNo" to no
-                    )
-
-                    // Add a new document with a generated ID
-                    db.collection("users").document(userId.toString()).set(user)
-                        .addOnSuccessListener {
-                            Toast.makeText(this, "Kayıt Başarılı", Toast.LENGTH_LONG).show()
-                            startActivity(Intent(this, MainActivity::class.java))
-                            finish()
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(
-                                this,
-                                "Firestore kaydı başarısız.",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                } else {
-                    Toast.makeText(
-                        baseContext,
-                        "Authentication failed."+task.exception,
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                        db.collection("users").document(userId.toString()).set(user)
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Kayıt Başarılı", Toast.LENGTH_LONG).show()
+                                startActivity(Intent(this, MainActivity::class.java))
+                                finish()
+                            }
+                            .addOnFailureListener {
+                                Toast.makeText(
+                                    this,
+                                    "Firestore kaydı başarısız.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                    }
+                    else
+                    {
+                        Toast.makeText(
+                            baseContext,
+                            "Authentication failed." + task.exception,
+                            Toast.LENGTH_SHORT,
+                        ).show()
+                    }
                 }
-            }
+        }
     }
 }

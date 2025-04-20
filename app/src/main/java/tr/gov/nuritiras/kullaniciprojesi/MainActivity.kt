@@ -40,8 +40,10 @@ class MainActivity : AppCompatActivity() {
         val parola=binding.editTextPassword.text.toString()
         if(eposta.isEmpty() || parola.isEmpty())
         {
-            Toast.makeText(this, "Lütfen kad şif boş g", Toast.LENGTH_SHORT).show()
-        } else {
+            Toast.makeText(this, "Lütfen boşlukları doldurunuz", Toast.LENGTH_SHORT).show()
+        }
+        else
+        {
             auth.signInWithEmailAndPassword(eposta, parola)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
@@ -49,7 +51,9 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this, DetaActivity::class.java)
                         startActivity(intent)
                         finish()
-                    } else {
+                    }
+                    else
+                    {
 
                         Toast.makeText(
                             baseContext,
